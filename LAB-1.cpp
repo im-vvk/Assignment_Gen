@@ -114,21 +114,21 @@ void quickSort(int arr[], int l, int h) {
     }
 }
 
-void writeItB(int n, double t) {
+void writeIt1(int n, double t) {
    fstream fout;
     fout.open("report1.csv", ios::out | ios::app);
         // Insert the data to file
         fout << n << ", " << t << "\n";
 }
 
-void writeItII(int n, double t) {
+void writeIt2(int n, double t) {
    fstream fout;
     fout.open("report2.csv", ios::out | ios::app);
         // Insert the data to file
         fout << n << ", " << t << "\n";
 }
 
-void writeItSS(int n, double t) {
+void writeIt3(int n, double t) {
    fstream fout;
     fout.open("report3.csv", ios::out | ios::app);
         // Insert the data to file
@@ -151,19 +151,19 @@ int main() {
     quickSort(arr1, 0, n-1);
     end = clock();
     double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-    writeItII(n, time_taken);
+    writeIt2(n, time_taken);
 
     start = clock();
     mergeSort(arr2, 0, n-1);
     end = clock();
     time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-    writeItSS(n, time_taken);
+    writeIt3(n, time_taken);
 
     start = clock();
     radixSort(arr3, n);
     end = clock();
     time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-    writeItB(n, time_taken);
+    writeIt1(n, time_taken);
   }
 
     return 0;

@@ -7,13 +7,19 @@ import pandas as pd
 import os
 
 # Some Inputs
-ip_file_name = "heap_sort.cpp"
+ip_file_name = "LAB-1.cpp"
 op_file_name = 'Algo_LAB_AS.docx'
 
 # compiling and running c++ file
 os.system("g++ " + ip_file_name)
 os.system("./a.out")
 colorV = ('red', 'blue', 'green')
+
+# Creating document object
+try:
+    document = Document(op_file_name)
+except:
+    document = Document()
 
 
 def plot_graph(ip):
@@ -48,14 +54,10 @@ def plot_graph(ip):
     plt.savefig('fig.png')
 
 
-# Creating document object
-document = Document()
-
+# defining top-margin to 0.5inches
 sections = document.sections
 section = sections[0]
 section.top_margin = Inches(0.5)
-
-lab_no = 1
 
 # Heading like LAB1
 paragraph = document.add_paragraph()
@@ -78,7 +80,7 @@ run.font.bold = True
 run.font.name = 'sans serif'
 
 # Reading from cpp file
-f = open('heap_sort.cpp', 'r')
+f = open(ip_file_name, 'r')
 
 aim = ''
 for line in f:
@@ -94,7 +96,7 @@ run = paragraph.add_run(aim)
 run.font.name = 'sans serif'
 
 # Codes
-f = open('heap_sort.cpp', 'r')
+f = open(ip_file_name, 'r')
 codes = ''
 k = True
 
@@ -130,3 +132,4 @@ document.save(op_file_name)
 
 for i in range(len(ips)):
     os.remove('report'+str(i+1)+'.csv')
+os.remove('a.out')
