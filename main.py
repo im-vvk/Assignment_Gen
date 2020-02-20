@@ -1,5 +1,5 @@
 """
-An effort to make effortless assignment
+An effort to make effortless assignment :)
 """
 
 from docx import Document
