@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-# Some Inputs
+# Input output file name
 ip_file_name = "LAB-1.cpp"
 op_file_name = 'Algo_LAB_AS.docx'
 
@@ -16,10 +16,14 @@ os.system("./a.out")
 colorV = ('red', 'blue', 'green')
 
 # Creating document object
-try:
-    document = Document(op_file_name)
-except:
-    document = Document()
+# # for opening existing document if exists
+# try:
+#     document = Document(op_file_name)
+# except:
+#     document = Document()
+
+# opening always new document
+document = Document()
 
 
 def plot_graph(ip):
