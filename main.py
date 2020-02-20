@@ -1,3 +1,7 @@
+"""
+An effort to make effortless assignment
+"""
+
 from docx import Document
 from docx.shared import Inches, Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
